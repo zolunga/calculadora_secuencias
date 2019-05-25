@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/semantic/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/semantic.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h3>Secuencias</h3>
+    <div class="ui grid" id="workspace">
+
+    </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+    <h3>Agregar Secuencia</h3>
+    <input type="text" id="sequenceInput" />
+    <label for="sequenceInput">Secuencia</label>
+    <button class="button" onclick="addSequence(event)">Agregar</button>
+    <p>1,2,4,#3,2,3</p>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+    <h3>Operaciones entre secuencias</h3>
+    <select class="ui dropdown">
+        <option value="suma">Suma</option>
+        <option value="resta">Resta</option>
+        <option value="mul">Mult</option>
+    </select>
+</div>
+</body>
+</html>
+<script src="js/start.js"></script>
+<script src="js/secuencia.js"></script>
