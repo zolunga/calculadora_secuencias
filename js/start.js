@@ -7,6 +7,8 @@ function init() {
 
 function addSequence(event) {
     event.preventDefault();
+    if ($('#sequenceInput').val() === undefined)
+        return;
     let tem_sec = new Secuencia($('#sequenceInput').val(), 'sequence' + count);
     tem_sec.analize_data();
     tem_sec.write();
@@ -21,11 +23,13 @@ function createSpace(sequence) {
     let buttonReflex = createButtonReflex(sequence);
     let buttonShift = createButton(sequence, 'shift', 'opShift', 'Desplazar');
     let buttonDiez = createButton(sequence, 'diezmar', 'opDiezmar', 'Diezmar');
+    let buttonMultC = createButton(sequence, 'multC', 'opMulConst', 'Multiplicar');
     cont.attr('id', 'div' + sequence.name);
     cont.addClass('two wide column');
     cont.append('<h4>' + sequence.name + '</h4>');
     cont.append('<p id="val' + sequence.name + '">' + sequence.input + '</p>');
     cont.append(buttonReflex);
+    cont.append(buttonMultC);
     cont.append(buttonShift);
     cont.append(buttonDiez);
     $('#workspace').append(cont);
@@ -36,6 +40,7 @@ function createButtonReflex(sequence) {
     buttonReflex.text('Reflejar');
     buttonReflex.attr('onclick', 'opReflex(\'' + sequence.name + '\')');
     buttonReflex.addClass('buttonOP');
+    buttonReflex.addClass('mini ui green button');
     return buttonReflex
 }
 
@@ -52,10 +57,13 @@ function createButton(sequence, type, op, text) {
     input.attr('type', 'text');
     input.attr('id', type + sequence.name);
     input.addClass('inputVal');
+    input.addClass('inputVal');
     let button = $('<button/>');
     button.text(text);
     button.attr('onclick', op + '("' + sequence.name + '")');
+    button.addClass('mini ui green button');
     button.addClass('buttonOP');
+    space.addClass('spaceD');
     space.append(button);
     space.append(input);
     return space
@@ -97,5 +105,8 @@ function opDiezmar(name) {
 }
 
 function opMulConst(name) {
-
+    let mult = parseInt($('#multC' + name).val());
+    dict_secquences[name].multByConst(mult);
+    dict_secquences[name].write();
+    $('#val' + name).text(dict_secquences[name].input);
 }

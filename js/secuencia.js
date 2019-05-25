@@ -86,6 +86,30 @@ class Secuencia {
         this.input = temArray.join(',');
     }
 
+    multByConst(con) {
+        this.positive = [];
+        this.center = undefined; // pos center
+        this.negative = [];
+        this.sequence = [];
+        let array_tem = this.input.split(',');
+        for (let i = 0; i < array_tem.length; i++) {
+            let clean = array_tem[i].replace(' ', '');
+            if (clean.search('#') !== -1) {
+                let x = clean.replace('#', '');
+                this.center = i;
+                this.sequence.push(parseInt(x) * con);
+                continue;
+            }
+            if(this.center === undefined){
+                this.negative.push(parseInt(clean) * con);
+            } else {
+                this.positive.push(parseInt(clean) * con);
+            }
+            this.sequence.push(parseInt(clean) * con);
+        }
+        this.refreshInput();
+    }
+
     write(){
         console.log(this);
     }
