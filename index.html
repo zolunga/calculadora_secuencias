@@ -38,13 +38,22 @@
 
 <div class="container">
     <h3>Operaciones entre secuencias</h3>
-    <select class="ui dropdown">
+    <select class="ui dropdown" onchange="select_op(this.value)">
+        <option disabled selected>Operación</option>
         <option value="suma">Suma</option>
         <option value="resta">Resta</option>
-        <option value="mul">Mult</option>
+        <option value="mult">Mult</option>
     </select>
+    <select class="ui dropdown" id="secuenciasOP1" onchange="setA(this.value)">
+        <option disabled selected>Secuencia 2</option>
+    </select>
+    <select class="ui dropdown" id="secuenciasOP2" onchange="setB(this.value)">
+        <option disabled selected>Secuencia 2</option>
+    </select>
+    <button class="ui orange button" onclick="startOP()">Realizar Operación</button>
 </div>
 </body>
 </html>
 <script src="js/start.js"></script>
 <script src="js/secuencia.js"></script>
+<script src="js/op_secuence.js"></script>

@@ -12,6 +12,7 @@ class Secuencia {
     }
 
     analize_data() {
+        this.clearObject();
         let array_tem = this.input.split(',');
         for (let i = 0; i < array_tem.length; i++) {
             let clean = array_tem[i].replace(' ', '');
@@ -22,7 +23,7 @@ class Secuencia {
                 continue;
             }
             if(this.center === undefined){
-                this.negative.push(parseInt(clean));
+                this.negative.unshift(parseInt(clean));
             } else {
                 this.positive.push(parseInt(clean));
             }
@@ -31,10 +32,7 @@ class Secuencia {
     }
 
     reflex() {
-        this.positive = [];
-        this.center = undefined; // pos center
-        this.negative = [];
-        this.sequence = [];
+        this.clearObject();
         let array_tem = this.input.split(',').reverse();
         this.input = array_tem.join(',');
         for (let i = 0; i < array_tem.length; i++) {
@@ -46,7 +44,7 @@ class Secuencia {
                 continue;
             }
             if(this.center === undefined){
-                this.negative.push(parseInt(clean));
+                this.negative.unshift(parseInt(clean));
             } else {
                 this.positive.push(parseInt(clean));
             }
@@ -59,19 +57,20 @@ class Secuencia {
         if (this.center >= this.sequence.length) {
             let difference = this.center - this.sequence.length;
             for (let i = 0; i <= difference; i++){
-                this.positive.push(0);
+                //this.positive.push(0);
                 this.sequence.push(0);
             }
             //this.center = this.center;
         } else if (this.center < 0) {
             let difference = - (this.center);
             for (let i = 0; i < difference; i++){
-                this.negative.unshift(0);
+                //this.negative.unshift(0);
                 this.sequence.unshift(0);
             }
             this.center = 0;
         }
         this.refreshInput();
+        this.analize_data();
     }
 
     refreshInput() {
@@ -87,10 +86,7 @@ class Secuencia {
     }
 
     multByConst(con) {
-        this.positive = [];
-        this.center = undefined; // pos center
-        this.negative = [];
-        this.sequence = [];
+        this.clearObject();
         let array_tem = this.input.split(',');
         for (let i = 0; i < array_tem.length; i++) {
             let clean = array_tem[i].replace(' ', '');
@@ -101,7 +97,7 @@ class Secuencia {
                 continue;
             }
             if(this.center === undefined){
-                this.negative.push(parseInt(clean) * con);
+                this.negative.unshift(parseInt(clean) * con);
             } else {
                 this.positive.push(parseInt(clean) * con);
             }
@@ -110,7 +106,22 @@ class Secuencia {
         this.refreshInput();
     }
 
+    clearObject() {
+        this.positive = [];
+        this.center = undefined; // pos center
+        this.negative = [];
+        this.sequence = [];
+    }
+
     write(){
         console.log(this);
+    }
+
+    verify() {
+        if (this.sequence === undefined || this.sequence.length === 0)
+            return false;
+        if (this.center === undefined || isNaN(this.center))
+            return false;
+        return true
     }
 }

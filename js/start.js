@@ -11,6 +11,8 @@ function addSequence(event) {
         return;
     let tem_sec = new Secuencia($('#sequenceInput').val(), 'sequence' + count);
     tem_sec.analize_data();
+    if (!tem_sec.verify())
+        return;
     tem_sec.write();
     dict_secquences['sequence' + count] = tem_sec;
     count++;
@@ -33,6 +35,8 @@ function createSpace(sequence) {
     cont.append(buttonShift);
     cont.append(buttonDiez);
     $('#workspace').append(cont);
+    $('#secuenciasOP1').append('<option>' + sequence.name + '</option>');
+    $('#secuenciasOP2').append('<option>' + sequence.name + '</option>');
 }
 
 function createButtonReflex(sequence) {
@@ -92,6 +96,8 @@ function paintSequence(sequence){
 
 function opShift(name) {
     let shift_val = parseInt($('#shift' + name).val());
+    if (shift_val === undefined || isNaN(shift_val))
+        return;
     dict_secquences[name].shiftSequence(shift_val);
     dict_secquences[name].write();
     $('#val' + name).text(dict_secquences[name].input);
@@ -99,6 +105,8 @@ function opShift(name) {
 
 function opDiezmar(name) {
     let inDiez = parseInt($('#inDiez' + name).val());
+    if (inDiez === undefined || isNaN(inDiez))
+        return;
     //dict_secquences[name].shiftSequence(shift_val);
     //dict_secquences[name].write();
     $('#val' + name).text(dict_secquences[name].input);
@@ -106,6 +114,8 @@ function opDiezmar(name) {
 
 function opMulConst(name) {
     let mult = parseInt($('#multC' + name).val());
+    if (mult === undefined || isNaN(mult))
+        return;
     dict_secquences[name].multByConst(mult);
     dict_secquences[name].write();
     $('#val' + name).text(dict_secquences[name].input);
