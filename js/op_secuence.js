@@ -16,23 +16,14 @@ function setB(val) {
 function startOP() {
     if (secA === undefined || secB === undefined || op === undefined)
         return;
-    console.log(secA);
-    console.log(secB);
-    console.log(op);
-    switch (op) {
-        case 'suma': suma_res(secA, secB, false); break;
-        case 'mult': console.log("a"); break;
-        case 'resta': suma_res(secA, secB, true); break;
-        default: return;
-    }
+    suma_res(secA, secB, op);
 }
 
-function suma_res(sequence1, sequence2, resta) {
+function suma_res(sequence1, sequence2, op) {
     let array_res = [];
-    let positive = suma_res_secs(sequence1.positive, sequence2.positive, resta);
-    let negative = suma_res_secs(sequence1.negative, sequence2.negative, resta);
-    let centers = suma_res_centers(sequence1, sequence2, resta);
-    console.log(centers)
+    let positive = operation(sequence1.positive, sequence2.positive, op);
+    let negative = operation(sequence1.negative, sequence2.negative, op);
+    let centers = operation_centers(sequence1, sequence2, op);
     negative.reverse();
     for (let i = 0; i < negative.length; i ++)
         array_res.push(negative[i].toString());
@@ -45,45 +36,48 @@ function suma_res(sequence1, sequence2, resta) {
         console.error('operacion fallida');
         return;
     }
-
     tem_sec.write();
     dict_secquences['sequence' + count] = tem_sec;
     count++;
     createSpace(tem_sec);
 }
 
-function suma_res_secs(sequence1, sequence2, resta) {
+function operation(sequence1, sequence2, op) {
     let secL = sequence1;
     let secM = sequence2;
-    let positiveResult = [];
-    if (sequence2.length > sequence1.length) {
-        secL = sequence2;
-        secM = sequence1;
-    }
-    for(let i = 0; i < secL.length; i++) {
-        positiveResult.push(0);
-    }
-    for(let i = 0; i < secL.length; i++) {
-        if (secL[i] === undefined && secM[i] === undefined) {
-            continue;
-        } else if (secL[i] !== undefined && secM[i] === undefined) {
-            if(resta)
-                positiveResult[i] = - (secL[i]);
-            else
-                positiveResult[i] = secL[i];
-        } else {
-            if(resta)
-                positiveResult[i] = secL[i] - secM[i];
-            else
-                positiveResult[i] = secL[i] + secM[i];
+    let length = sequence1.length;
+    let Result = [];
+    if (sequence2.length > sequence1.length)
+        length = sequence2.length;
+    for(let i = 0; i < length; i++)
+        Result.push(0);
+    for(let i = 0; i < length; i++) {
+        if (secL[i] === undefined)
+            secL[i] = 0;
+        if (secM[i] === undefined)
+            secM[i] = 0;
+        switch (op) {
+            case "suma":
+                Result[i] = secL[i] + secM[i];
+                break;
+            case "resta":
+                Result[i] = secL[i] - secM[i];
+                break;
+            case "mult":
+                Result[i] = secL[i] * secM[i];
+                break;
         }
     }
-    return positiveResult;
+    return Result;
 }
 
-function suma_res_centers(sequence1, sequence2, resta) {
-    if(resta)
-        return sequence1.sequence[sequence1.center] - sequence2.sequence[sequence2.center];
-    else
-        return sequence1.sequence[sequence1.center] + sequence2.sequence[sequence2.center];
+function operation_centers(sequence1, sequence2, op) {
+    switch (op) {
+        case "suma":
+            return sequence1.sequence[sequence1.center] + sequence2.sequence[sequence2.center];
+        case "resta":
+            return sequence1.sequence[sequence1.center] - sequence2.sequence[sequence2.center];
+        case "mult":
+            return sequence1.sequence[sequence1.center] * sequence2.sequence[sequence2.center];
+    }
 }

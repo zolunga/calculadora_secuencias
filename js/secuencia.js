@@ -29,6 +29,7 @@ class Secuencia {
             }
             this.sequence.push(parseInt(clean));
         }
+        this.toChartData();
     }
 
     reflex() {
@@ -123,5 +124,15 @@ class Secuencia {
         if (this.center === undefined || isNaN(this.center))
             return false;
         return true
+    }
+
+    toChartData() {
+        let arrayX = [];
+        for (let i = this.negative.length; i > 0; i--)
+            arrayX.push(-(i));
+        arrayX.push(0); // center
+        for(let i = 1; i <= this.positive.length; i++)
+            arrayX.push(i);
+        return arrayX
     }
 }

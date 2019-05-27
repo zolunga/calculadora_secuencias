@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="js/jquery.js"></script>
     <script src="js/semantic.js"></script>
+    <script src="js/plotly-latest.min.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -51,6 +52,13 @@
         <option disabled selected>Secuencia 2</option>
     </select>
     <button class="ui orange button" onclick="startOP()">Realizar Operación</button>
+</div>
+<div class="ui modal" id="modalGraf">
+    <div class="ui centered grid">
+        <div class="row">
+            <div class="modal container" id="chart"></div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

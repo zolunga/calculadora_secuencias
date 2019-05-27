@@ -3,6 +3,7 @@ let count = 0;
 
 function init() {
     $('.ui.dropdown').dropdown();
+    $('#modalGraf.ui.modal').modal();
 }
 
 function addSequence(event) {
@@ -23,9 +24,11 @@ function addSequence(event) {
 function createSpace(sequence) {
     let cont = $('<div/>');
     let buttonReflex = createButtonReflex(sequence);
+    let buttonChart = createButtonChart(sequence);
     let buttonShift = createButton(sequence, 'shift', 'opShift', 'Desplazar');
     let buttonDiez = createButton(sequence, 'diezmar', 'opDiezmar', 'Diezmar');
     let buttonMultC = createButton(sequence, 'multC', 'opMulConst', 'Multiplicar');
+    let buttonInter = createButton(sequence, 'inter', 'opInterpolacion', 'Interpolar');
     cont.attr('id', 'div' + sequence.name);
     cont.addClass('two wide column');
     cont.append('<h4>' + sequence.name + '</h4>');
@@ -34,18 +37,35 @@ function createSpace(sequence) {
     cont.append(buttonMultC);
     cont.append(buttonShift);
     cont.append(buttonDiez);
+    cont.append(buttonInter);
+    cont.append(buttonChart);
     $('#workspace').append(cont);
     $('#secuenciasOP1').append('<option>' + sequence.name + '</option>');
     $('#secuenciasOP2').append('<option>' + sequence.name + '</option>');
 }
 
 function createButtonReflex(sequence) {
+    let space = $('<div/>');
     let buttonReflex = $('<button/>');
     buttonReflex.text('Reflejar');
     buttonReflex.attr('onclick', 'opReflex(\'' + sequence.name + '\')');
     buttonReflex.addClass('buttonOP');
     buttonReflex.addClass('mini ui green button');
-    return buttonReflex
+    space.addClass('spaceD');
+    space.append(buttonReflex);
+    return space
+}
+
+function createButtonChart(sequence) {
+    let space = $('<div/>');
+    let buttonReflex = $('<button/>');
+    buttonReflex.text('Grafica');
+    buttonReflex.attr('onclick', 'showChart(\'' + sequence.name + '\')');
+    buttonReflex.addClass('buttonOP');
+    buttonReflex.addClass('mini ui green button');
+    space.addClass('spaceD');
+    space.append(buttonReflex);
+    return space
 }
 
 /**
@@ -104,8 +124,17 @@ function opShift(name) {
 }
 
 function opDiezmar(name) {
-    let inDiez = parseInt($('#inDiez' + name).val());
+    let inDiez = parseInt($('#diezmar' + name).val());
     if (inDiez === undefined || isNaN(inDiez))
+        return;
+    //dict_secquences[name].shiftSequence(shift_val);
+    //dict_secquences[name].write();
+    $('#val' + name).text(dict_secquences[name].input);
+}
+
+function opInterpolacion(name) {
+    let inInter = parseInt($('#inter' + name).val());
+    if (inInter === undefined || isNaN(inInter))
         return;
     //dict_secquences[name].shiftSequence(shift_val);
     //dict_secquences[name].write();
@@ -119,4 +148,39 @@ function opMulConst(name) {
     dict_secquences[name].multByConst(mult);
     dict_secquences[name].write();
     $('#val' + name).text(dict_secquences[name].input);
+}
+
+function showChart(name) {
+    let arX = dict_secquences[name].toChartData();
+    let arY = dict_secquences[name].sequence;
+    let trace1 = {
+        x: arX,
+        y: arY,
+        mode: 'lines+markers',
+        marker: {
+            color: 'rgb(128, 0, 128)',
+            size: 8
+        },
+        line: {
+            color: 'rgb(128, 0, 128)',
+            width: 1
+        }
+    };
+    let layout = {
+        xaxis: {
+            tick0: 1,
+            dtick: 1,
+            showgrid: true,
+            showline: true,
+            mirror: 'ticks',
+            gridcolor: '#bdbdbd',
+            gridwidth: 1,
+            zerolinecolor: '#969696',
+            zerolinewidth: 4,
+            linecolor: '#636363',
+            linewidth: 6
+        },
+    };
+    Plotly.newPlot('chart', [trace1], layout);
+    $('#modalGraf').modal('show');
 }
