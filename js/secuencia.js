@@ -135,4 +135,20 @@ class Secuencia {
             arrayX.push(i);
         return arrayX
     }
+
+    decimate(n) {
+        let new_sequence = [];
+        for (let i = 0; i < this.negative.length; i++) {
+            if ((i+1)%n === 0 && i !== 0)
+                new_sequence.push(this.negative[i].toString());
+        }
+        new_sequence.reverse();
+        new_sequence.push('#' + this.sequence[this.center].toString());
+        for (let i = 0; i < this.positive.length; i++) {
+            if ((i+1)%n === 0 && i !== 0)
+                new_sequence.push(this.positive[i].toString());
+        }
+        this.input = new_sequence.join(',');
+        this.analize_data();
+    }
 }

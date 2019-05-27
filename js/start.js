@@ -127,8 +127,8 @@ function opDiezmar(name) {
     let inDiez = parseInt($('#diezmar' + name).val());
     if (inDiez === undefined || isNaN(inDiez))
         return;
-    //dict_secquences[name].shiftSequence(shift_val);
-    //dict_secquences[name].write();
+    dict_secquences[name].decimate(inDiez);
+    dict_secquences[name].write();
     $('#val' + name).text(dict_secquences[name].input);
 }
 
