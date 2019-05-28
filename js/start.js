@@ -136,8 +136,8 @@ function opInterpolacion(name) {
     let inInter = parseInt($('#inter' + name).val());
     if (inInter === undefined || isNaN(inInter))
         return;
-    //dict_secquences[name].shiftSequence(shift_val);
-    //dict_secquences[name].write();
+    dict_secquences[name].interpolar(inInter);
+    dict_secquences[name].write();
     $('#val' + name).text(dict_secquences[name].input);
 }
 
