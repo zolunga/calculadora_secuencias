@@ -155,16 +155,19 @@ class Secuencia {
     interpolar(n) {
         let num_center = this.sequence[this.center];
         let new_sequence = [];
-        this.negative.reverse();
+        this.negative.push(0);
         for (let i = 0; i < this.negative.length; i++) {
             if (this.negative[i + 1] === undefined)
                 continue;
-            let tem = this.getSubparts(this.negative[i + 1], this.negative[i], n);
-            new_sequence = this.unite(new_sequence, tem.reverse());
+            let tem = this.getSubparts(this.negative[i], this.negative[i + 1], n);
+            new_sequence = this.unite(new_sequence, tem);
         }
+        new_sequence.reverse();
         let neg_to_cen = this.getSubparts(num_center, this.negative[0], n);
+        neg_to_cen.shift();
         let cen_to_pos = this.getSubparts(num_center, this.positive[0], n);
-        new_sequence = this.unite(new_sequence, neg_to_cen.reverse());
+        cen_to_pos.shift();
+        new_sequence = this.unite(new_sequence, neg_to_cen);
         new_sequence.push(this.sequence[this.center].toString() + '#');
         new_sequence = this.unite(new_sequence, cen_to_pos);
         console.log(this.positive);
@@ -212,7 +215,6 @@ class Secuencia {
             let tem = start + (i * size_part);
             array_result.push(tem.toFixed(2));
         }
-        console.log("start: " + start + " end: " + end + " n_parts" + n_parts + " -- " + array_result);
         return array_result;
     }
 }

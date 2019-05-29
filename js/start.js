@@ -29,16 +29,22 @@ function createSpace(sequence) {
     let buttonDiez = createButton(sequence, 'diezmar', 'opDiezmar', 'Diezmar');
     let buttonMultC = createButton(sequence, 'multC', 'opMulConst', 'Multiplicar');
     let buttonInter = createButton(sequence, 'inter', 'opInterpolacion', 'Interpolar');
+    let div = $('<div/>');
+    let seq_text = paintSequence(sequence);
+    div.addClass('scrollSec');
     cont.attr('id', 'div' + sequence.name);
-    cont.addClass('two wide column');
+    cont.addClass('two wide centered column');
     cont.append('<h4>' + sequence.name + '</h4>');
-    cont.append('<p id="val' + sequence.name + '">' + sequence.input + '</p>');
+    div.append(seq_text);
+    //div.append('<p id="val' + sequence.name + '">' + sequence.input + '</p>');
+    cont.append(div);
     cont.append(buttonReflex);
     cont.append(buttonMultC);
     cont.append(buttonShift);
     cont.append(buttonDiez);
     cont.append(buttonInter);
     cont.append(buttonChart);
+    cont.addClass('spaceSec');
     $('#workspace').append(cont);
     $('#secuenciasOP1').append('<option>' + sequence.name + '</option>');
     $('#secuenciasOP2').append('<option>' + sequence.name + '</option>');
@@ -93,25 +99,27 @@ function createButton(sequence, type, op, text) {
     return space
 }
 
-
-function opReflex(name) {
-    dict_secquences[name].reflex();
-    dict_secquences[name].write();
-    $('#val' + name).text(dict_secquences[name].input);
-}
-
 function paintSequence(sequence){
     let array_tem = sequence.input.split(',');
     let cadena = $('<p/>');
+    cadena.attr('id', 'val' + sequence.name);
+    cadena.append('<span style="color: black"> { </span>');
     for (let i = 0; i < array_tem.length; i++) {
         let clean = array_tem[i].replace(' ', '');
         if (clean.search('#') !== -1) {
-            cadena.append('<div style="color: #8c0615">' + array_tem[i] + '</div>')
+            cadena.append('<span style="color: #8c0615">' + array_tem[i] + ', </span>')
         } else {
-            cadena.append(array_tem[i])
+            cadena.append('<span style="color: black">' + array_tem[i] + ', </span>')
         }
     }
+    cadena.append('<span style="color: black"> } </span>');
     return cadena;
+}
+
+function opReflex(name) {
+    dict_secquences[name].reflex();
+    let seq_text = paintSequence(dict_secquences[name]);
+    $('#val' + name).replaceWith(seq_text);
 }
 
 function opShift(name) {
@@ -119,8 +127,8 @@ function opShift(name) {
     if (shift_val === undefined || isNaN(shift_val))
         return;
     dict_secquences[name].shiftSequence(shift_val);
-    dict_secquences[name].write();
-    $('#val' + name).text(dict_secquences[name].input);
+    let seq_text = paintSequence(dict_secquences[name]);
+    $('#val' + name).replaceWith(seq_text);
 }
 
 function opDiezmar(name) {
@@ -128,8 +136,8 @@ function opDiezmar(name) {
     if (inDiez === undefined || isNaN(inDiez))
         return;
     dict_secquences[name].decimate(inDiez);
-    dict_secquences[name].write();
-    $('#val' + name).text(dict_secquences[name].input);
+    let seq_text = paintSequence(dict_secquences[name]);
+    $('#val' + name).replaceWith(seq_text);
 }
 
 function opInterpolacion(name) {
@@ -137,8 +145,8 @@ function opInterpolacion(name) {
     if (inInter === undefined || isNaN(inInter))
         return;
     dict_secquences[name].interpolar(inInter);
-    dict_secquences[name].write();
-    $('#val' + name).text(dict_secquences[name].input);
+    let seq_text = paintSequence(dict_secquences[name]);
+    $('#val' + name).replaceWith(seq_text);
 }
 
 function opMulConst(name) {
@@ -146,8 +154,8 @@ function opMulConst(name) {
     if (mult === undefined || isNaN(mult))
         return;
     dict_secquences[name].multByConst(mult);
-    dict_secquences[name].write();
-    $('#val' + name).text(dict_secquences[name].input);
+    let seq_text = paintSequence(dict_secquences[name]);
+    $('#val' + name).replaceWith(seq_text);
 }
 
 function showChart(name) {

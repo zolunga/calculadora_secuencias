@@ -9,3 +9,14 @@
 .spaceD {
     padding-top: 5px;
 }
+
+.spaceSec {
+    border: green;
+    border-style: groove;
+}
+
+.scrollSec {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
