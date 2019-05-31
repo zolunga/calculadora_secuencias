@@ -109,14 +109,21 @@ function paintSequence(sequence){
     let cadena = $('<p/>');
     cadena.attr('id', 'val' + sequence.name);
     cadena.append('<span style="color: black"> { </span>');
+    if(sequence.periodic)
+        cadena.append('<span style="color: black"> ..., </span>');
     for (let i = 0; i < array_tem.length; i++) {
         let clean = array_tem[i].replace(' ', '');
         if (clean.search('#') !== -1) {
             cadena.append('<span style="color: #8c0615">' + array_tem[i] + ', </span>')
         } else {
-            cadena.append('<span style="color: black">' + array_tem[i] + ', </span>')
+            if (!(array_tem.length - 1 === i))
+                cadena.append('<span style="color: black">' + array_tem[i] + ', </span>');
+            else
+                cadena.append('<span style="color: black">' + array_tem[i] + ' </span>');
         }
     }
+    if(sequence.periodic)
+        cadena.append('<span style="color: black"> ... </span>');
     cadena.append('<span style="color: black"> } </span>');
     return cadena;
 }

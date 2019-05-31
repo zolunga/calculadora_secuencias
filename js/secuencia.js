@@ -17,20 +17,29 @@ class Secuencia {
         let array_tem = this.input.split(',');
         for (let i = 0; i < array_tem.length; i++) {
             let clean = array_tem[i].replace(' ', '');
+            array_tem[i] = clean;
             if (clean.search('#') !== -1) {
                 let x = clean.replace('#', '');
                 this.center = i;
                 this.sequence.push(parseFloat(x));
                 continue;
             }
+            clean = parseFloat(clean);
+            if (isNaN(clean))
+                continue;
             if(this.center === undefined){
-                this.negative.unshift(parseFloat(clean));
+                this.negative.unshift(clean);
             } else {
-                this.positive.push(parseFloat(clean));
+                this.positive.push(clean);
             }
-            this.sequence.push(parseFloat(clean));
+            this.sequence.push(clean);
         }
-        this.toChartData();
+        if (array_tem[0].localeCompare('...') === 0 && array_tem[array_tem.length - 1].localeCompare('...') === 0) {
+            this.periodic = true;
+            array_tem.shift();
+            array_tem.pop();
+            this.input = array_tem.join(',');
+        }
     }
 
     reflex() {
@@ -124,7 +133,7 @@ class Secuencia {
             return false;
         if (this.center === undefined || isNaN(this.center))
             return false;
-        return true
+        return true;
     }
 
     toChartData() {
@@ -134,7 +143,7 @@ class Secuencia {
         arrayX.push(0); // center
         for(let i = 1; i <= this.positive.length; i++)
             arrayX.push(i);
-        return arrayX
+        return arrayX;
     }
 
     decimate(n) {
@@ -153,7 +162,7 @@ class Secuencia {
         this.analize_data();
     }
 
-    interpolar(n) {
+    interpolate(n) {
         let num_center = this.sequence[this.center];
         let new_sequence = [];
         this.negative.push(0);

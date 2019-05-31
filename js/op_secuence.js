@@ -1,6 +1,6 @@
 let secA = undefined;
 let secB = undefined;
-let op = undefined
+let op = undefined;
 function select_op(val) {
     op = val;
 }
@@ -33,6 +33,8 @@ function suma_res(sequence1, sequence2, op) {
     array_res.push(centers.toString() + '#');
     for (let i = 0; i < positive.length; i ++)
         array_res.push(positive[i].toString());
+    AddNewResult(array_res.join(','));
+    /*
     let tem_sec = new Secuencia(array_res.join(','), 'sequence' + count);
     tem_sec.analize_data();
     if (!tem_sec.verify()){
@@ -43,6 +45,8 @@ function suma_res(sequence1, sequence2, op) {
     dict_secquences['sequence' + count] = tem_sec;
     count++;
     createSpace(tem_sec);
+
+     */
 }
 
 /**
@@ -96,28 +100,38 @@ function Convolution(sequence1, sequence2) {
     let B_sec = sequence1; // big
     let S_sec = sequence2; // small
     let result = [];
-    let spaces = [];
     let new_center = sequence1.negative.length + sequence2.negative.length;
-    let new_len = sequence1.sequence.length + sequence2.sequence.length - 1;
+    let new_input = '';
     if (S_sec.sequence.length > B_sec.sequence.length) {
         B_sec = sequence2;
         S_sec = sequence1;
     }
-    for (let i = 0; i < B_sec.sequence.length; i++)
-        result.push(0);
-    for (let i = 0; i < S_sec.sequence.length; i++) {
-        spaces.push([]);
-        for (let j = 0; j < new_len; j++) {
-            spaces[i].push(0);
-        }
-    }
     for (let i = 0; i < S_sec.sequence.length; i++) {
         for (let j = 0; j < B_sec.sequence.length; j++) {
-            spaces[i][j + i] = B_sec.sequence[j] * S_sec.sequence[i];
+            if (result[j + i] === undefined)
+                result[j + i] = 0;
+            result[j + i] += B_sec.sequence[j] * S_sec.sequence[i];
         }
     }
+    for (let i = 0; i < result.length; i++) {
+        if (i === new_center)
+            new_input += result[i].toString() + '#,';
+        else
+            new_input += result[i].toString() + ',';
+    }
+    let tem = new_input.substring(0, new_input.length - 1);
+    AddNewResult(tem);
+}
 
-    console.log(spaces);
-    console.log(result);
-    console.log(new_center);
+function AddNewResult(new_input) {
+    let tem_sec = new Secuencia(new_input, 'sequence' + count);
+    tem_sec.analize_data();
+    if (!tem_sec.verify()){
+        console.error('operacion fallida');
+        return;
+    }
+    tem_sec.write();
+    dict_secquences['sequence' + count] = tem_sec;
+    count++;
+    createSpace(tem_sec);
 }

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb81342-11c5-4e13-9c4c-ae1b1fbb220b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/wav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/op_secuence.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/op_secuence.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/secuencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/secuencia.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/start.js" afterDir="false" />
@@ -26,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+            <state relative-caret-position="362">
+              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -35,9 +32,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/start.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+            <state relative-caret-position="93">
+              <caret line="174" column="45" lean-forward="true" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
               <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -50,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/op_secuence.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
+            <state relative-caret-position="1218">
+              <caret line="100" column="35" lean-forward="true" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -59,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/wav.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2036">
-              <caret line="237" column="60" lean-forward="true" selection-start-line="237" selection-start-column="60" selection-end-line="237" selection-end-column="60" />
+            <state relative-caret-position="4746">
+              <caret line="237" column="60" selection-start-line="237" selection-start-column="60" selection-end-line="237" selection-end-column="60" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -71,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/secuencia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="240">
+              <caret line="143" column="54" lean-forward="true" selection-start-line="143" selection-start-column="54" selection-end-line="143" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -80,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="105">
               <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
             </state>
           </provider>
@@ -102,6 +102,9 @@
       <find>inputShift</find>
       <find>buttonShift</find>
       <find>negative</find>
+      <find>new Secuencia</find>
+      <find>toc</find>
+      <find>tochar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -114,24 +117,26 @@
         <option value="$PROJECT_DIR$/start.js" />
         <option value="$PROJECT_DIR$/js/jquery.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/js/secuencia.js" />
-        <option value="$PROJECT_DIR$/js/op_secuence.js" />
         <option value="$PROJECT_DIR$/js/wav.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/op_secuence.js" />
         <option value="$PROJECT_DIR$/js/start.js" />
+        <option value="$PROJECT_DIR$/js/secuencia.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="975" />
-    <option name="height" value="1047" />
+    <option name="x" value="1979" />
+    <option name="y" value="25" />
+    <option name="width" value="1307" />
+    <option name="height" value="743" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,7 +158,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -204,18 +208,20 @@
       <workItem from="1558914163330" duration="2858000" />
       <workItem from="1558917383470" duration="4950000" />
       <workItem from="1559264551174" duration="4970000" />
+      <workItem from="1559304215938" duration="3731000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37451000" />
+    <option name="totallyTimeSpent" value="41182000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
+    <frame x="1979" y="25" width="1307" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49960223" visible="true" weight="0.1930654" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49833333" visible="true" weight="0.27570093" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" id="Favorites" order="2" sideWeight="0.5003978" side_tool="true" visible="true" weight="0.1930654" />
+      <window_info active="true" id="Favorites" order="2" sideWeight="0.50166667" side_tool="true" visible="true" weight="0.27570093" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -237,16 +243,8 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/Documentos Personales/CV/styles.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://D:/Documentos Personales/CV/CV2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/Documentos Personales/CV/styles.css" />
+    <entry file="file://D:/Documentos Personales/CV/CV2.html" />
     <entry file="file://$PROJECT_DIR$/js/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -258,49 +256,52 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/plotly.js" />
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/secuencia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/wav.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2036">
-          <caret line="237" column="60" lean-forward="true" selection-start-line="237" selection-start-column="60" selection-end-line="237" selection-end-column="60" />
+        <state relative-caret-position="4746">
+          <caret line="237" column="60" selection-start-line="237" selection-start-column="60" selection-end-line="237" selection-end-column="60" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        <state relative-caret-position="362">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/op_secuence.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
+        <state relative-caret-position="1218">
+          <caret line="100" column="35" lean-forward="true" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/secuencia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="143" column="54" lean-forward="true" selection-start-line="143" selection-start-column="54" selection-end-line="143" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/start.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        <state relative-caret-position="93">
+          <caret line="174" column="45" lean-forward="true" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
           <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
