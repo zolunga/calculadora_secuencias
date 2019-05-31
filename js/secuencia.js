@@ -5,6 +5,7 @@ class Secuencia {
     sequence = [];
     input = '';
     name = '';
+    periodic = false;
 
     constructor(in_array_text, name) {
         this.input = in_array_text;

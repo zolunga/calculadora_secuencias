@@ -29,6 +29,8 @@
     <label for="sequenceInput">Secuencia</label>
     <button class="button" onclick="addSequence(event)">Agregar</button>
     <p>1,2,4,#3,2,3</p>
+    <p>10, -0.5#, 4, 2, -1, 11</p>
+    <p>4, 5, -1#, 2</p>
 </div>
 
 <br/>
@@ -43,7 +45,8 @@
         <option disabled selected>Operación</option>
         <option value="suma">Suma</option>
         <option value="resta">Resta</option>
-        <option value="mult">Mult</option>
+        <option value="mult">Multiplicacion</option>
+        <option value="conv">Convolucion</option>
     </select>
     <select class="ui dropdown" id="secuenciasOP1" onchange="setA(this.value)">
         <option disabled selected>Secuencia 2</option>
@@ -63,5 +66,6 @@
 </body>
 </html>
 <script src="js/start.js"></script>
+<script src="js/wav.js"></script>
 <script src="js/secuencia.js"></script>
 <script src="js/op_secuence.js"></script>

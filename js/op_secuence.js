@@ -16,7 +16,10 @@ function setB(val) {
 function startOP() {
     if (secA === undefined || secB === undefined || op === undefined)
         return;
-    suma_res(secA, secB, op);
+    if (op.localeCompare('conv') === 0)
+        Convolution(secA, secB);
+    else
+        suma_res(secA, secB, op);
 }
 
 function suma_res(sequence1, sequence2, op) {
@@ -42,6 +45,13 @@ function suma_res(sequence1, sequence2, op) {
     createSpace(tem_sec);
 }
 
+/**
+ * Realiza la operacion de los correspondientes fragmentos de la secuencia
+ * @param sequence1
+ * @param sequence2
+ * @param op
+ * @returns {Array}
+ */
 function operation(sequence1, sequence2, op) {
     let secL = sequence1;
     let secM = sequence2;
@@ -80,4 +90,34 @@ function operation_centers(sequence1, sequence2, op) {
         case "mult":
             return sequence1.sequence[sequence1.center] * sequence2.sequence[sequence2.center];
     }
+}
+
+function Convolution(sequence1, sequence2) {
+    let B_sec = sequence1; // big
+    let S_sec = sequence2; // small
+    let result = [];
+    let spaces = [];
+    let new_center = sequence1.negative.length + sequence2.negative.length;
+    let new_len = sequence1.sequence.length + sequence2.sequence.length - 1;
+    if (S_sec.sequence.length > B_sec.sequence.length) {
+        B_sec = sequence2;
+        S_sec = sequence1;
+    }
+    for (let i = 0; i < B_sec.sequence.length; i++)
+        result.push(0);
+    for (let i = 0; i < S_sec.sequence.length; i++) {
+        spaces.push([]);
+        for (let j = 0; j < new_len; j++) {
+            spaces[i].push(0);
+        }
+    }
+    for (let i = 0; i < S_sec.sequence.length; i++) {
+        for (let j = 0; j < B_sec.sequence.length; j++) {
+            spaces[i][j + i] = B_sec.sequence[j] * S_sec.sequence[i];
+        }
+    }
+
+    console.log(spaces);
+    console.log(result);
+    console.log(new_center);
 }

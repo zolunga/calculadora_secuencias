@@ -4,6 +4,11 @@ let count = 0;
 function init() {
     $('.ui.dropdown').dropdown();
     $('#modalGraf.ui.modal').modal();
+    let wavFile = new wav('sample.wav');
+    wavFile.onloadend = function () {
+        // 'this' refers to the wav instance
+        console.log(this);
+    };
 }
 
 function addSequence(event) {
@@ -33,7 +38,7 @@ function createSpace(sequence) {
     let seq_text = paintSequence(sequence);
     div.addClass('scrollSec');
     cont.attr('id', 'div' + sequence.name);
-    cont.addClass('two wide centered column');
+    cont.addClass('three wide centered column');
     cont.append('<h4>' + sequence.name + '</h4>');
     div.append(seq_text);
     //div.append('<p id="val' + sequence.name + '">' + sequence.input + '</p>');
