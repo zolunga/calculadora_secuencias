@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb81342-11c5-4e13-9c4c-ae1b1fbb220b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/op_secuence.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/op_secuence.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/p5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/p5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/p5.sound.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/p5.sound.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/p5/addons/p5.dom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/p5/addons/p5.dom.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/p5/empty-example/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/p5/empty-example/sketch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/secuencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/secuencia.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/start.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -40,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/start.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="668">
-              <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+            <state relative-caret-position="467">
+              <caret line="181" column="17" lean-forward="true" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -58,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/op_secuence.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="136" column="52" lean-forward="true" selection-start-line="136" selection-start-column="52" selection-end-line="136" selection-end-column="52" />
+            <state relative-caret-position="596">
+              <caret line="140" column="28" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -79,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/secuencia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="164" column="15" selection-start-line="164" selection-start-column="4" selection-end-line="164" selection-end-column="15" />
+            <state relative-caret-position="840">
+              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -112,8 +104,11 @@
       <find>negative</find>
       <find>new Secuencia</find>
       <find>toc</find>
-      <find>tochar</find>
       <find>interpola</find>
+      <find>tocg</find>
+      <find>this.cente</find>
+      <find>tochar</find>
+      <find>center</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -127,9 +122,9 @@
         <option value="$PROJECT_DIR$/js/jquery.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
         <option value="$PROJECT_DIR$/js/wav.js" />
-        <option value="$PROJECT_DIR$/js/secuencia.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/start.js" />
+        <option value="$PROJECT_DIR$/js/secuencia.js" />
         <option value="$PROJECT_DIR$/js/op_secuence.js" />
       </list>
     </option>
@@ -244,7 +239,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46185000" />
+    <option name="totallyTimeSpent" value="50510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
@@ -304,13 +299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/secuencia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="164" column="15" selection-start-line="164" selection-start-column="4" selection-end-line="164" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -318,10 +306,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/secuencia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/start.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+        <state relative-caret-position="467">
+          <caret line="181" column="17" lean-forward="true" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -336,8 +331,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/op_secuence.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="136" column="52" lean-forward="true" selection-start-line="136" selection-start-column="52" selection-end-line="136" selection-end-column="52" />
+        <state relative-caret-position="596">
+          <caret line="140" column="28" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="28" />
         </state>
       </provider>
     </entry>

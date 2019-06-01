@@ -172,8 +172,9 @@ function opMulConst(name) {
 }
 
 function showChart(name) {
-    let arX = dict_secquences[name].toChartData();
-    let arY = dict_secquences[name].sequence;
+    let axis = dict_secquences[name].toChartData();
+    let arX = axis.arrayX;
+    let arY = axis.arrayY;
     let trace1 = {
         x: arX,
         y: arY,

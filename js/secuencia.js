@@ -36,6 +36,7 @@ class Secuencia {
         }
         if (array_tem[0].localeCompare('...') === 0 && array_tem[array_tem.length - 1].localeCompare('...') === 0) {
             this.periodic = true;
+            this.center -= 1;
             array_tem.shift();
             array_tem.pop();
             this.input = array_tem.join(',');
@@ -137,14 +138,41 @@ class Secuencia {
     }
 
     toChartData() {
-        let arrayX = [];
-        for (let i = this.negative.length; i > 0; i--)
-            arrayX.push(-(i));
-        arrayX.push(0); // center
-        for(let i = 1; i <= this.positive.length; i++)
-            arrayX.push(i);
-        return arrayX;
+        let Data = {
+            arrayX: [],
+            arrayY: []
+        };
+        for (let i = this.negative.length -1; i >= 0; i--){
+            Data.arrayX.push(-(i + 1));
+            Data.arrayY.push(this.negative[i])
+        }
+        Data.arrayX.push(0); // center
+        Data.arrayY.push(this.sequence[this.center]); // center
+        for(let i = 0; i < this.positive.length; i++){
+            Data.arrayX.push(i + 1);
+            Data.arrayY.push(this.positive[i]);
+        }
+
+        if(!this.periodic)
+            return Data;
+        let count_pos = this.positive.length;
+        let count_neg = -(this.negative.length);
+        for (let j = 0; j < 2; j++) {
+            for (let i = 0; i < this.sequence.length; i++) {
+                count_pos++;
+                Data.arrayX.push(count_pos);
+                Data.arrayY.push(this.sequence[i]);
+            }
+            for (let i = this.sequence.length - 1; i >= 0; i--) {
+                count_neg--;
+                Data.arrayX.unshift(count_neg);
+                Data.arrayY.unshift(this.sequence[i]);
+            }
+        }
+        console.log(Data);
+        return Data;
     }
+
 
     decimate(n) {
         let new_sequence = [];

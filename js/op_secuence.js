@@ -130,9 +130,6 @@ function Convolution(sequence1, sequence2) {
         }
         for (let i = 0; i < len_periodic; i++)
             temArray2.push(0);
-        console.log(result)
-        console.log(temArray1)
-        console.log(temArray2)
         result = [];
         for (let i = 0; i < temArray1.length; i++) {
                 result.push(temArray1[i] + temArray2[i])
