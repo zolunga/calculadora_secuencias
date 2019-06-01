@@ -52,15 +52,15 @@ class Secuencia {
             if (clean.search('#') !== -1) {
                 let x = clean.replace('#', '');
                 this.center = i;
-                this.sequence.push(parseInt(x));
+                this.sequence.push(parseFloat(x));
                 continue;
             }
             if(this.center === undefined){
-                this.negative.unshift(parseInt(clean));
+                this.negative.unshift(parseFloat(clean));
             } else {
-                this.positive.push(parseInt(clean));
+                this.positive.push(parseFloat(clean));
             }
-            this.sequence.push(parseInt(clean));
+            this.sequence.push(parseFloat(clean));
         }
     }
 
@@ -105,15 +105,15 @@ class Secuencia {
             if (clean.search('#') !== -1) {
                 let x = clean.replace('#', '');
                 this.center = i;
-                this.sequence.push(parseInt(x) * con);
+                this.sequence.push(parseFloat(x) * con);
                 continue;
             }
             if(this.center === undefined){
-                this.negative.unshift(parseInt(clean) * con);
+                this.negative.unshift(parseFloat(clean) * con);
             } else {
-                this.positive.push(parseInt(clean) * con);
+                this.positive.push(parseFloat(clean) * con);
             }
-            this.sequence.push(parseInt(clean) * con);
+            this.sequence.push(parseFloat(clean) * con);
         }
         this.refreshInput();
     }

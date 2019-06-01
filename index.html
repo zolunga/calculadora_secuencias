@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/p5/p5/p5.js"></script>
+    <script src="js/p5/p5/addons/p5.dom.js"></script>
+    <script src="js/p5/p5/addons/p5.sound.js"></script>
     <link rel="stylesheet" type="text/css" href="css/semantic/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="js/jquery.js"></script>
     <script src="js/semantic.js"></script>
-    <script src="js/p5/p5/p5.js"></script>
-    <script src="js/p5/p5/addons/p5.sound.js"></script>
     <script src="js/plotly-latest.min.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -30,6 +31,10 @@
     <input type="text" id="sequenceInput" />
     <label for="sequenceInput">Secuencia</label>
     <button class="button" onclick="addSequence(event)">Agregar</button>
+    <br/><br/>
+    <button class="button" onclick="record(event)" id="record">Record</button>
+    <button class="button" onclick="startSound(event)">Play</button>
+    <button class="button" onclick="addSequenceSound(event)">Agregar sonido</button>
     <p>1,2,4,#3,2,3</p>
     <p>10, -0.5#, 4, 2, -1, 11</p>
     <p>4, 5, -1#, 2</p>
@@ -62,7 +67,7 @@
     </select>
     <button class="ui orange button" onclick="startOP()">Realizar Operación</button>
 </div>
-<div class="ui modal" id="modalGraf">
+<div class="ui modal" id="modalGraf" style="width: 90%; height: 90%;">
     <div class="ui centered grid">
         <div class="row">
             <div class="modal container" id="chart"></div>
@@ -72,6 +77,55 @@
 </body>
 </html>
 <script src="js/start.js"></script>
-<script src="js/wav.js"></script>
 <script src="js/secuencia.js"></script>
 <script src="js/op_secuence.js"></script>
+<script>
+    let mic;
+    let recorder;
+    let soundFile;
+    let state = 0;
+    let amp_hist = [];
+    let amp;
+    let recording = false;
+    function setup() {
+        mic = new p5.AudioIn();
+        mic.start();
+        recorder = new p5.SoundRecorder();
+        recorder.setInput(mic);
+        soundFile = new p5.SoundFile();
+        amp = new p5.Amplitude();
+        createCanvas(710, 200);
+    }
+
+    function draw() {
+        background(255);
+        let rms = amp.getLevel();
+        if (recording)
+            amp_hist.push(rms);
+        fill(127);
+        stroke(0);
+        ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
+    }
+
+    function startSound() {
+        if (soundFile.isPlaying()) {
+            soundFile.stop();
+        } else {
+            soundFile.play();
+        }
+    }
+
+    function record() {
+        amp_hist = [];
+        recording = true;
+        if (mic.enabled) {
+            recorder.record(soundFile);
+            amp.setInput(mic);
+            setTimeout(() => {
+                recorder.stop();
+                recording = false;
+            }, 3000);
+        }
+    }
+</script>
+

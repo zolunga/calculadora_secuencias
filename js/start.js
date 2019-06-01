@@ -1,14 +1,9 @@
 let dict_secquences = {};
 let count = 0;
-
-function init() {
+initCalc();
+function initCalc() {
     $('.ui.dropdown').dropdown();
     $('#modalGraf.ui.modal').modal();
-    let wavFile = new wav('sample.wav');
-    wavFile.onloadend = function () {
-        // 'this' refers to the wav instance
-        console.log(this);
-    };
 }
 
 function addSequence(event) {
@@ -26,14 +21,31 @@ function addSequence(event) {
     //1,2,4,#3,2,3
 }
 
+function addSequenceSound(event) {
+    event.preventDefault();
+    if (amp_hist === undefined || amp_hist.length === 0)
+        return;
+    amp_hist[0] = amp_hist[0].toString() + '#';
+    let string_sec = amp_hist.join(',');
+    let tem_sec = new Secuencia(string_sec, 'sequence' + count);
+    tem_sec.analize_data();
+    if (!tem_sec.verify())
+        return;
+    tem_sec.write();
+    dict_secquences['sequence' + count] = tem_sec;
+    count++;
+    createSpace(tem_sec);
+    //1,2,4,#3,2,3
+}
+
 function createSpace(sequence) {
     let cont = $('<div/>');
     let buttonReflex = createButtonReflex(sequence);
     let buttonChart = createButtonChart(sequence);
-    let buttonShift = createButton(sequence, 'shift', 'opShift', 'Desplazar');
-    let buttonDiez = createButton(sequence, 'diezmar', 'opDiezmar', 'Diezmar');
-    let buttonMultC = createButton(sequence, 'multC', 'opMulConst', 'Multiplicar');
-    let buttonInter = createButton(sequence, 'inter', 'opInterpolacion', 'Interpolar');
+    let buttonShift = createButtonA(sequence, 'shift', 'opShift', 'Desplazar');
+    let buttonDiez = createButtonA(sequence, 'diezmar', 'opDiezmar', 'Diezmar');
+    let buttonMultC = createButtonA(sequence, 'multC', 'opMulConst', 'Multiplicar');
+    let buttonInter = createButtonA(sequence, 'inter', 'opInterpolacion', 'Interpolar');
     let div = $('<div/>');
     let seq_text = paintSequence(sequence);
     div.addClass('scrollSec');
@@ -86,7 +98,7 @@ function createButtonChart(sequence) {
  * @param op operacion que realiza
  * @returns {*|jQuery.fn.init|jQuery|HTMLElement}
  */
-function createButton(sequence, type, op, text) {
+function createButtonA(sequence, type, op, text) {
     let space = $('<div/>');
     let input = $('<input/>');
     input.attr('type', 'text');
@@ -172,6 +184,7 @@ function opMulConst(name) {
 }
 
 function showChart(name) {
+    $('#modalGraf').modal('show');
     let axis = dict_secquences[name].toChartData();
     let arX = axis.arrayX;
     let arY = axis.arrayY;
@@ -189,6 +202,9 @@ function showChart(name) {
         }
     };
     let layout = {
+        autosize: false,
+        width: ($('#modalGraf').width * .9),
+        height: ($('#modalGraf').height * .9),
         xaxis: {
             tick0: 1,
             dtick: 1,
@@ -203,6 +219,7 @@ function showChart(name) {
             linewidth: 6
         },
     };
+    console.log(layout)
     Plotly.newPlot('chart', [trace1], layout);
-    $('#modalGraf').modal('show');
+
 }
