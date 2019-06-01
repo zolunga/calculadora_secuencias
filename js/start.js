@@ -123,7 +123,7 @@ function paintSequence(sequence){
         }
     }
     if(sequence.periodic)
-        cadena.append('<span style="color: black"> ... </span>');
+        cadena.append('<span style="color: black"> ,... </span>');
     cadena.append('<span style="color: black"> } </span>');
     return cadena;
 }
@@ -156,15 +156,16 @@ function opInterpolacion(name) {
     let inInter = parseInt($('#inter' + name).val());
     if (inInter === undefined || isNaN(inInter))
         return;
-    dict_secquences[name].interpolar(inInter);
+    dict_secquences[name].interpolate(inInter);
     let seq_text = paintSequence(dict_secquences[name]);
     $('#val' + name).replaceWith(seq_text);
 }
 
 function opMulConst(name) {
-    let mult = parseInt($('#multC' + name).val());
+    let mult = parseFloat($('#multC' + name).val());
     if (mult === undefined || isNaN(mult))
         return;
+    console.log(mult)
     dict_secquences[name].multByConst(mult);
     let seq_text = paintSequence(dict_secquences[name]);
     $('#val' + name).replaceWith(seq_text);

@@ -34,19 +34,6 @@ function suma_res(sequence1, sequence2, op) {
     for (let i = 0; i < positive.length; i ++)
         array_res.push(positive[i].toString());
     AddNewResult(array_res.join(','));
-    /*
-    let tem_sec = new Secuencia(array_res.join(','), 'sequence' + count);
-    tem_sec.analize_data();
-    if (!tem_sec.verify()){
-        console.error('operacion fallida');
-        return;
-    }
-    tem_sec.write();
-    dict_secquences['sequence' + count] = tem_sec;
-    count++;
-    createSpace(tem_sec);
-
-     */
 }
 
 /**
@@ -96,12 +83,21 @@ function operation_centers(sequence1, sequence2, op) {
     }
 }
 
+/**
+ * Realiza el proceso de convolucionar dos secuencias, si estas son periodicas tambien hace el proceso
+ * @param sequence1
+ * @param sequence2
+ * @constructor
+ */
 function Convolution(sequence1, sequence2) {
     let B_sec = sequence1; // big
     let S_sec = sequence2; // small
     let result = [];
     let new_center = sequence1.negative.length + sequence2.negative.length;
     let new_input = '';
+    let perdiodicOne = sequence2.periodic || sequence1.periodic;
+    let perdiodicBoth = sequence2.periodic && sequence1.periodic;
+
     if (S_sec.sequence.length > B_sec.sequence.length) {
         B_sec = sequence2;
         S_sec = sequence1;
@@ -113,14 +109,47 @@ function Convolution(sequence1, sequence2) {
             result[j + i] += B_sec.sequence[j] * S_sec.sequence[i];
         }
     }
+    if (perdiodicOne || perdiodicBoth) {
+        let temArray1 = [];
+        let temArray2 = [];
+        let len_periodic = 0;
+        if (perdiodicOne && !perdiodicBoth) {
+            if(B_sec.periodic) {
+                len_periodic = B_sec.sequence.length;
+            } else {
+                len_periodic = S_sec.sequence.length;
+            }
+        } else if (perdiodicBoth){
+            len_periodic = B_sec.sequence.length;
+        }
+        for (let i = 0;  i < result.length; i++) {
+            if (i < len_periodic)
+                temArray1.push(result[i]);
+            else
+                temArray2.push(result[i]);
+        }
+        for (let i = 0; i < len_periodic; i++)
+            temArray2.push(0);
+        console.log(result)
+        console.log(temArray1)
+        console.log(temArray2)
+        result = [];
+        for (let i = 0; i < temArray1.length; i++) {
+                result.push(temArray1[i] + temArray2[i])
+        }
+    }
+    if (perdiodicOne)
+        new_input += '...,';
     for (let i = 0; i < result.length; i++) {
         if (i === new_center)
             new_input += result[i].toString() + '#,';
         else
             new_input += result[i].toString() + ',';
     }
-    let tem = new_input.substring(0, new_input.length - 1);
-    AddNewResult(tem);
+    new_input = new_input.substring(0, new_input.length - 1);
+    if (perdiodicOne)
+        new_input += ',...';
+    AddNewResult(new_input);
 }
 
 function AddNewResult(new_input) {
