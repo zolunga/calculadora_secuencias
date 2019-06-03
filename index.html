@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-    <h3>Secuencias</h3>
+    <h3 style="text-align: center">Calculadora de secuencias</h3>
     <div class="ui grid" id="workspace">
 
     </div>
@@ -26,15 +26,26 @@
 <br/>
 <br/>
 
-<div class="container">
-    <h3>Agregar Secuencia</h3>
-    <input type="text" id="sequenceInput" />
-    <label for="sequenceInput">Secuencia</label>
-    <button class="button" onclick="addSequence(event)">Agregar</button>
-    <br/><br/>
-    <button class="button" onclick="record(event)" id="record">Record</button>
-    <button class="button" onclick="startSound(event)">Play</button>
-    <button class="button" onclick="addSequenceSound(event)">Agregar sonido</button>
+<div class="ui grid container">
+    <div class="row">
+        <div class="six wide centered column">
+            <h3 style="text-align: center">Agregar Secuencia</h3>
+            <div class="ui input" style="width: 65%">
+                <input type="text" id="sequenceInput" placeholder="Ingresar secuencia"/>
+            </div>
+            <button class="ui button" style="width: 30%" onclick="addSequence(event)">Agregar</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="six wide centered column">
+            <div class="ui grid">
+                <button class="ui button five wide column" onclick="record(event)" id="record">Grabar</button>
+                <button class="ui button five wide column" onclick="startSound(event)">Reproducir</button>
+                <button class="ui button five wide column" onclick="addSequenceSound(event)">Agregar sonido</button>
+            </div>
+        </div>
+    </div>
+    <!--
     <p>1,2,4,#3,2,3</p>
     <p>10, -0.5#, 4, 2, -1, 11</p>
     <p>4, 5, -1#, 2</p>
@@ -42,31 +53,30 @@
     <p>...,-2,4#,8,...</p>
     <p>...,4,1,5#,6,-2,...</p>
     <p>...,0#,4,3,1,...</p>
+    -->
+
+    <div class="centered row">
+        <h3 style="text-align: center">Operaciones entre secuencias</h3>
+    </div>
+    <div class="centered row">
+        <select class="ui dropdown" onchange="select_op(this.value)">
+            <option disabled selected>Operación</option>
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="mult">Multiplicación</option>
+            <option value="conv">Convolución</option>
+        </select>
+        <select class="ui dropdown" id="secuenciasOP1" onchange="setA(this.value)">
+            <option disabled selected>Secuencia A</option>
+        </select>
+        <select class="ui dropdown" id="secuenciasOP2" onchange="setB(this.value)">
+            <option disabled selected>Secuencia B</option>
+        </select>
+        <button class="ui orange button" onclick="startOP()">Realizar Operación</button>
+    </div>
 </div>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
-<div class="container">
-    <h3>Operaciones entre secuencias</h3>
-    <select class="ui dropdown" onchange="select_op(this.value)">
-        <option disabled selected>Operación</option>
-        <option value="suma">Suma</option>
-        <option value="resta">Resta</option>
-        <option value="mult">Multiplicacion</option>
-        <option value="conv">Convolucion</option>
-    </select>
-    <select class="ui dropdown" id="secuenciasOP1" onchange="setA(this.value)">
-        <option disabled selected>Secuencia 2</option>
-    </select>
-    <select class="ui dropdown" id="secuenciasOP2" onchange="setB(this.value)">
-        <option disabled selected>Secuencia 2</option>
-    </select>
-    <button class="ui orange button" onclick="startOP()">Realizar Operación</button>
-</div>
 <div class="ui modal" id="modalGraf" style="width: 90%; height: 90%;">
     <div class="ui centered grid">
         <div class="row">
@@ -94,7 +104,7 @@
         recorder.setInput(mic);
         soundFile = new p5.SoundFile();
         amp = new p5.Amplitude();
-        createCanvas(710, 200);
+        createCanvas(window.innerWidth, 280);
     }
 
     function draw() {
@@ -102,9 +112,9 @@
         let rms = amp.getLevel();
         if (recording)
             amp_hist.push(rms);
-        fill(127);
-        stroke(0);
-        ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
+        fill(255, 0, 0);
+        stroke(100);
+        ellipse(width / 2, height / 2, 30 + rms * 200, 30 + rms * 200);
     }
 
     function startSound() {
@@ -118,12 +128,14 @@
     function record() {
         amp_hist = [];
         recording = true;
+        $('#record').addClass('red');
         if (mic.enabled) {
             recorder.record(soundFile);
             amp.setInput(mic);
             setTimeout(() => {
                 recorder.stop();
                 recording = false;
+                $('#record').removeClass('red');
             }, 3000);
         }
     }
