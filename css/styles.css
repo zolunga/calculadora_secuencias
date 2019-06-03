@@ -11,8 +11,9 @@
 }
 
 .spaceSec {
-    border: green;
+    border: #003c80;
     border-style: groove;
+    background: powderblue;
 }
 
 .scrollSec {

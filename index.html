@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body style="background: cadetblue">
 <div class="container">
     <h3 style="text-align: center">Calculadora de secuencias</h3>
     <div class="ui grid" id="workspace">
@@ -26,22 +26,22 @@
 <br/>
 <br/>
 
-<div class="ui grid container">
+<div class="ui grid container" style="padding-bottom: 10px">
     <div class="row">
         <div class="six wide centered column">
             <h3 style="text-align: center">Agregar Secuencia</h3>
             <div class="ui input" style="width: 65%">
                 <input type="text" id="sequenceInput" placeholder="Ingresar secuencia"/>
             </div>
-            <button class="ui button" style="width: 30%" onclick="addSequence(event)">Agregar</button>
+            <button class="ui button orange" style="width: 30%" onclick="addSequence(event)">Agregar</button>
         </div>
     </div>
     <div class="row">
         <div class="six wide centered column">
             <div class="ui grid">
-                <button class="ui button five wide column" onclick="record(event)" id="record">Grabar</button>
-                <button class="ui button five wide column" onclick="startSound(event)">Reproducir</button>
-                <button class="ui button five wide column" onclick="addSequenceSound(event)">Agregar sonido</button>
+                <button class="ui button five wide column orange" onclick="record(event)" id="record">Grabar</button>
+                <button class="ui button five wide column orange" onclick="startSound(event)">Reproducir</button>
+                <button class="ui button five wide column orange" onclick="addSequenceSound(event)">Agregar sonido</button>
             </div>
         </div>
     </div>
@@ -112,7 +112,7 @@
         let rms = amp.getLevel();
         if (recording)
             amp_hist.push(rms);
-        fill(255, 0, 0);
+        fill(0, 102, 204);
         stroke(100);
         ellipse(width / 2, height / 2, 30 + rms * 200, 30 + rms * 200);
     }

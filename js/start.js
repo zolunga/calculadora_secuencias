@@ -203,8 +203,8 @@ function showChart(name) {
     };
     let layout = {
         autosize: false,
-        width: ($('#modalGraf').width * .9),
-        height: ($('#modalGraf').height * .9),
+        width: 1300,
+        height: 650,
         xaxis: {
             tick0: 1,
             dtick: 1,
