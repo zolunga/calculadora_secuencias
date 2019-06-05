@@ -99,7 +99,6 @@
     let amp_hist = [];
     let amp;
     let recording = false;
-    let example;
     function setup() {
         mic = new p5.AudioIn();
         mic.start();
@@ -132,6 +131,7 @@
     }
 
     function record() {
+        soundFile = new p5.SoundFile();
         amp_hist = [];
         recording = true;
         $('#record').removeClass('orange');
@@ -144,6 +144,7 @@
                 recording = false;
                 $('#record').removeClass('red');
                 $('#record').addClass('orange');
+                saveSound(soundFile, 'sequence' + count.toString());
             }, 3000);
         }
     }

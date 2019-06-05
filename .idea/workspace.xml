@@ -4,16 +4,14 @@
     <list default="true" id="ccb81342-11c5-4e13-9c4c-ae1b1fbb220b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/secuencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/secuencia.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/start.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nodeServer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodeServer/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nodeServer/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodeServer/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/x.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/x2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/x3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/x4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/x5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/x6.wav" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/x6.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/sequence0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/sequence4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/sequence5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/x6.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/x7.wav" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+            <state relative-caret-position="446">
+              <caret line="137" column="37" lean-forward="true" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h3#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -48,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/start.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+            <state relative-caret-position="399">
+              <caret line="148" column="59" lean-forward="true" selection-start-line="148" selection-start-column="59" selection-end-line="148" selection-end-column="59" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -66,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nodeServer/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+            <state relative-caret-position="155">
+              <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -100,6 +98,7 @@
       <find>agregar</find>
       <find>cente</find>
       <find>var</find>
+      <find>soundFile</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -118,18 +117,18 @@
         <option value="$PROJECT_DIR$/js/sound.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
         <option value="$PROJECT_DIR$/js/rw.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/secuencia.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/nodeServer/index.js" />
         <option value="$PROJECT_DIR$/js/start.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="59" />
-    <option name="y" value="-2" />
-    <option name="width" value="1861" />
-    <option name="height" value="1082" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1979" />
+    <option name="y" value="25" />
+    <option name="width" value="1307" />
+    <option name="height" value="743" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -147,17 +146,7 @@
             <path>
               <item name="calculadora_secuencias" type="b2602c69:ProjectViewProjectNode" />
               <item name="calculadora_secuencias" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="calculadora_secuencias" type="b2602c69:ProjectViewProjectNode" />
-              <item name="calculadora_secuencias" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="calculadora_secuencias" type="b2602c69:ProjectViewProjectNode" />
-              <item name="calculadora_secuencias" type="462c0819:PsiDirectoryNode" />
-              <item name="nodeServer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,18 +211,18 @@
       <workItem from="1559578085590" duration="3707000" />
       <workItem from="1559651332360" duration="3976000" />
       <workItem from="1559673729214" duration="1427000" />
-      <workItem from="1559736851387" duration="6428000" />
+      <workItem from="1559736851387" duration="11138000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82779000" />
+    <option name="totallyTimeSpent" value="87489000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="-2" width="1861" height="1082" extended-state="6" />
+    <frame x="1979" y="25" width="1307" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988067" visible="true" weight="0.15288357" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988067" visible="true" weight="0.21884735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50119334" side_tool="true" weight="0.11741529" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -246,7 +235,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="GraphQL" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.39510116" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.05" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -316,15 +305,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nodeServer/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="155">
+          <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+        <state relative-caret-position="446">
+          <caret line="137" column="37" lean-forward="true" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -337,8 +326,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/start.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        <state relative-caret-position="399">
+          <caret line="148" column="59" lean-forward="true" selection-start-line="148" selection-start-column="59" selection-end-line="148" selection-end-column="59" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />

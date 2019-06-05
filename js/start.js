@@ -21,28 +21,28 @@ function addSequence(event) {
     //1,2,4,#3,2,3
 }
 
+
 function addSequenceSound(event) {
     event.preventDefault();
     if (amp_hist === undefined || amp_hist.length === 0)
         return;
-    amp_hist[0] = amp_hist[0].toString() + '#';
-    let string_sec = amp_hist.join(',');
-    let tem_sec = new Secuencia(string_sec, 'sequence' + count);
-    tem_sec.analize_data();
-    if (!tem_sec.verify())
-        return;
-    tem_sec.write();
-    dict_secquences['sequence' + count] = tem_sec;
-    count++;
-    createSpace(tem_sec);
-    let dataS = {
-        seq: JSON.stringify(tem_sec.sequence),
-        name: tem_sec.name
-    };
-    //1,2,4,#3,2,3
-    $.get('http://localhost:3000/sound/wav', dataS, (data) => {
-        console.log(data);
-    }).fail((err) => console.log(err))
+    let name = 'sequence' + count;
+
+    setTimeout(() => {
+        $.get('http://localhost:3000/sound/wav', {name: name}, (data) => {
+            console.log(data);
+            let seq = data[0];
+            seq[0] = seq.toString() + '#';
+            let tem_sec = new Secuencia(seq.join(','), 'sequence' + count);
+            tem_sec.analize_data();
+            if (!tem_sec.verify())
+                return;
+            tem_sec.write();
+            dict_secquences['sequence' + count] = tem_sec;
+            count++;
+            createSpace(tem_sec);
+        }).fail((err) => console.log(err));
+    }, 500);
 }
 
 function createSpace(sequence) {
@@ -126,11 +126,14 @@ function createButtonA(sequence, type, op, text) {
 function paintSequence(sequence){
     let array_tem = sequence.input.split(',');
     let cadena = $('<p/>');
+    let length = array_tem.length;
+    if (array_tem.length > 500)
+        length = 500;
     cadena.attr('id', 'val' + sequence.name);
     cadena.append('<span style="color: black"> { </span>');
     if(sequence.periodic)
         cadena.append('<span style="color: black"> ..., </span>');
-    for (let i = 0; i < array_tem.length; i++) {
+    for (let i = 0; i < length; i++) {
         let clean = array_tem[i].replace(' ', '');
         if (clean.search('#') !== -1) {
             cadena.append('<span style="color: #8c0615">' + array_tem[i] + ', </span>')
