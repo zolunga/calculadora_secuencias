@@ -41,6 +41,7 @@ class Secuencia {
             array_tem.pop();
             this.input = array_tem.join(',');
         }
+        this.write()
     }
 
     reflex() {
@@ -208,7 +209,6 @@ class Secuencia {
         new_sequence = this.unite(new_sequence, neg_to_cen);
         new_sequence.push(this.sequence[this.center].toString() + '#');
         new_sequence = this.unite(new_sequence, cen_to_pos);
-        console.log(this.positive);
         for (let i = 0; i < this.positive.length; i++) {
             let tem = this.getSubparts(this.positive[i], 0, n);
             if (this.positive[i + 1] !== undefined)
@@ -251,7 +251,7 @@ class Secuencia {
         let array_result = [];
         for (let i = 0; i < n_parts; i++) {
             let tem = start + (i * size_part);
-            array_result.push(tem.toFixed(2));
+            array_result.push(tem);
         }
         return array_result;
     }

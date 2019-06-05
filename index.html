@@ -108,8 +108,6 @@
         soundFile = new p5.SoundFile();
         amp = new p5.Amplitude();
         createCanvas(window.innerWidth, 280);
-        example = loadSound('sounds/x6.wav');
-        //example = loadSound('js/sample.wav');
     }
 
 
@@ -124,8 +122,6 @@
     }
 
     function startSound() {
-        example.play();
-        /*
         if (soundFile !== undefined) {
             if (soundFile.isPlaying()) {
                 soundFile.stop();
@@ -133,8 +129,6 @@
                 soundFile.play();
             }
         }
-
-         */
     }
 
     function record() {

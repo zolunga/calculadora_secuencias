@@ -35,7 +35,14 @@ function addSequenceSound(event) {
     dict_secquences['sequence' + count] = tem_sec;
     count++;
     createSpace(tem_sec);
+    let dataS = {
+        seq: JSON.stringify(tem_sec.sequence),
+        name: tem_sec.name
+    };
     //1,2,4,#3,2,3
+    $.get('http://localhost:3000/sound/wav', dataS, (data) => {
+        console.log(data);
+    }).fail((err) => console.log(err))
 }
 
 function createSpace(sequence) {
