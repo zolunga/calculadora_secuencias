@@ -29,11 +29,14 @@ function addSequenceSound(event) {
     let name = 'sequence' + count;
 
     setTimeout(() => {
-        $.get('http://localhost:3000/sound/wav', {name: name}, (data) => {
+        $.get('http://localhost:4000/sound/wav', {name: name}, (data) => {
             console.log(data);
-            let seq = data[0];
-            seq[0] = seq.toString() + '#';
-            let tem_sec = new Secuencia(seq.join(','), 'sequence' + count);
+            let seq = [];
+            for (let key in data.res) {
+                seq.push(data.res[key]);
+            }
+            seq[0] = seq[0].toString() + '#';
+            let tem_sec = new Secuencia(seq.join(','), 'sequence' + count, true);
             tem_sec.analize_data();
             if (!tem_sec.verify())
                 return;
@@ -68,6 +71,8 @@ function createSpace(sequence) {
     cont.append(buttonDiez);
     cont.append(buttonInter);
     cont.append(buttonChart);
+    if (sequence.audio)
+        cont.append(createButtonWav(sequence));
     cont.addClass('spaceSec');
     $('#workspace').append(cont);
     $('#secuenciasOP1').append('<option>' + sequence.name + '</option>');
@@ -91,6 +96,18 @@ function createButtonChart(sequence) {
     let buttonReflex = $('<button/>');
     buttonReflex.text('Grafica');
     buttonReflex.attr('onclick', 'showChart(\'' + sequence.name + '\')');
+    buttonReflex.addClass('buttonOP');
+    buttonReflex.addClass('mini ui green button');
+    space.addClass('spaceD');
+    space.append(buttonReflex);
+    return space
+}
+
+function createButtonWav(sequence) {
+    let space = $('<div/>');
+    let buttonReflex = $('<button/>');
+    buttonReflex.text('Audio');
+    buttonReflex.attr('onclick', 'genwav(\'' + sequence + '\')');
     buttonReflex.addClass('buttonOP');
     buttonReflex.addClass('mini ui green button');
     space.addClass('spaceD');
@@ -127,8 +144,11 @@ function paintSequence(sequence){
     let array_tem = sequence.input.split(',');
     let cadena = $('<p/>');
     let length = array_tem.length;
-    if (array_tem.length > 500)
-        length = 500;
+    let extra = '';
+    if (array_tem.length > 100){
+        length = 100;
+        extra = '... Arreglo demasiado grande para imprimir (' + array_tem.length + ')';
+    }
     cadena.attr('id', 'val' + sequence.name);
     cadena.append('<span style="color: black"> { </span>');
     if(sequence.periodic)
@@ -146,7 +166,7 @@ function paintSequence(sequence){
     }
     if(sequence.periodic)
         cadena.append('<span style="color: black"> ,... </span>');
-    cadena.append('<span style="color: black"> } </span>');
+    cadena.append('<span style="color: black"> ' + extra + '} </span>');
     return cadena;
 }
 
@@ -231,5 +251,14 @@ function showChart(name) {
     };
     console.log(layout)
     Plotly.newPlot('chart', [trace1], layout);
+}
 
+function genwav(sequence) {
+    let dataS = {
+        seq: JSON.stringify(sequence.sequence),
+        name: sequence.name
+    };
+    $.post('http://localhost:4000/sound/genwav', dataS, (data)=>{
+        console.log(data);
+    })
 }

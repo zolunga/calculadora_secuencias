@@ -6,10 +6,13 @@ class Secuencia {
     input = '';
     name = '';
     periodic = false;
+    audio = false;
 
-    constructor(in_array_text, name) {
+    constructor(in_array_text, name, audio) {
         this.input = in_array_text;
         this.name = name;
+        if(audio)
+            this.audio = true;
     }
 
     analize_data() {
