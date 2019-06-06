@@ -6,10 +6,13 @@ class Secuencia {
     input = '';
     name = '';
     periodic = false;
+    audio = false;
 
-    constructor(in_array_text, name) {
+    constructor(in_array_text, name, audio) {
         this.input = in_array_text;
         this.name = name;
+        if(audio)
+            this.audio = true;
     }
 
     analize_data() {
@@ -41,6 +44,7 @@ class Secuencia {
             array_tem.pop();
             this.input = array_tem.join(',');
         }
+        //this.write()
     }
 
     reflex() {
@@ -208,7 +212,6 @@ class Secuencia {
         new_sequence = this.unite(new_sequence, neg_to_cen);
         new_sequence.push(this.sequence[this.center].toString() + '#');
         new_sequence = this.unite(new_sequence, cen_to_pos);
-        console.log(this.positive);
         for (let i = 0; i < this.positive.length; i++) {
             let tem = this.getSubparts(this.positive[i], 0, n);
             if (this.positive[i + 1] !== undefined)
@@ -221,15 +224,11 @@ class Secuencia {
 
     unite(arrA, arrB) {
         let arrRet = [];
-        if (arrA !== undefined && arrA.length > 0) {
-            for (let i = 0; i < arrA.length; i++) {
-                arrRet.push(arrA[i]);
-            }
+        for (let i = 0; i < arrA.length; i++) {
+            arrRet.push(arrA[i]);
         }
-        if (arrB !== undefined && arrB.length > 0) {
-            for (let i = 0; i < arrB.length; i++) {
-                arrRet.push(arrB[i]);
-            }
+        for (let i = 0; i < arrB.length; i++) {
+            arrRet.push(arrB[i]);
         }
         return arrRet;
     }
@@ -251,7 +250,7 @@ class Secuencia {
         let array_result = [];
         for (let i = 0; i < n_parts; i++) {
             let tem = start + (i * size_part);
-            array_result.push(tem.toFixed(2));
+            array_result.push(tem);
         }
         return array_result;
     }

@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb81342-11c5-4e13-9c4c-ae1b1fbb220b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/rw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nodeServer/secuencia.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodeServer/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodeServer/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodeServer/sample.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/sequence0.wav" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/sequence0.wav" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,29 +24,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="135" column="8" lean-forward="true" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
+            <state relative-caret-position="399">
+              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h3#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/rw.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="896">
-              <caret line="113" column="50" lean-forward="true" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,26 +46,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/start.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4242">
-              <caret line="202" column="6" selection-start-line="202" selection-start-column="6" selection-end-line="202" selection-end-column="6" />
+            <state relative-caret-position="-516">
+              <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/op_secuence.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1596">
+              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/styles.css">
+        <entry file="file://$PROJECT_DIR$/nodeServer/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="502">
+              <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/secuencia.js">
+        <entry file="file://$PROJECT_DIR$/nodeServer/secuencia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1533">
-              <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+            <state relative-caret-position="190">
+              <caret line="203" column="25" selection-start-line="203" selection-start-column="25" selection-end-line="203" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -103,6 +116,19 @@
       <find>agregar</find>
       <find>cente</find>
       <find>var</find>
+      <find>soundFile</find>
+      <find>tocha</find>
+      <find>add</find>
+      <find>adds</find>
+      <find>addseq</find>
+      <find>createButtonWav</find>
+      <find>genwav</find>
+      <find>body</find>
+      <find>audio</find>
+      <find>interpo</find>
+      <find>amp</find>
+      <find>inter</find>
+      <find>interpolate</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,19 +145,21 @@
         <option value="$PROJECT_DIR$/js/sound..js" />
         <option value="$PROJECT_DIR$/tem.html" />
         <option value="$PROJECT_DIR$/js/sound.js" />
-        <option value="$PROJECT_DIR$/js/secuencia.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/js/start.js" />
         <option value="$PROJECT_DIR$/js/rw.js" />
+        <option value="$PROJECT_DIR$/nodeServer/index.js" />
+        <option value="$PROJECT_DIR$/js/secuencia.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/start.js" />
+        <option value="$PROJECT_DIR$/nodeServer/app.js" />
+        <option value="$PROJECT_DIR$/nodeServer/secuencia.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="385" />
-    <option name="y" value="303" />
-    <option name="width" value="1395" />
-    <option name="height" value="810" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="420" />
+    <option name="width" value="981" />
+    <option name="height" value="557" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -148,33 +176,12 @@
             <path>
               <item name="calculadora_secuencias" type="b2602c69:ProjectViewProjectNode" />
               <item name="calculadora_secuencias" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="calculadora_secuencias" type="b2602c69:ProjectViewProjectNode" />
-              <item name="calculadora_secuencias" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="calculadora_secuencias" type="b2602c69:ProjectViewProjectNode" />
               <item name="calculadora_secuencias" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="p5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="calculadora_secuencias" type="b2602c69:ProjectViewProjectNode" />
-              <item name="calculadora_secuencias" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="p5" type="462c0819:PsiDirectoryNode" />
-              <item name="p5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="calculadora_secuencias" type="b2602c69:ProjectViewProjectNode" />
-              <item name="calculadora_secuencias" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="p5" type="462c0819:PsiDirectoryNode" />
-              <item name="p5" type="462c0819:PsiDirectoryNode" />
-              <item name="addons" type="462c0819:PsiDirectoryNode" />
+              <item name="nodeServer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -187,7 +194,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nodeServer" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -200,6 +207,7 @@
       <recent name="C:\Users\alan\Documents\js\secuencias" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/nodeServer" />
       <recent name="C:\Users\alan\Documents\git\calculadora_secuencias" />
       <recent name="C:\Users\alan\Documents\js\secuencias\js\css" />
     </key>
@@ -236,18 +244,23 @@
       <workItem from="1559304215938" duration="4405000" />
       <workItem from="1559563452071" duration="7651000" />
       <workItem from="1559577976419" duration="72000" />
-      <workItem from="1559578085590" duration="2620000" />
+      <workItem from="1559578085590" duration="3707000" />
+      <workItem from="1559651332360" duration="3976000" />
+      <workItem from="1559673729214" duration="1427000" />
+      <workItem from="1559736851387" duration="16528000" />
+      <workItem from="1559759667504" duration="4230000" />
+      <workItem from="1559775011408" duration="3465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69861000" />
+    <option name="totallyTimeSpent" value="109227000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="385" y="303" width="1395" height="810" extended-state="0" />
+    <frame x="59" y="-2" width="1861" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988067" visible="true" weight="0.20626822" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988067" visible="true" weight="0.15288357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50119334" side_tool="true" weight="0.11741529" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -260,7 +273,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="GraphQL" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3514377" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -287,13 +300,6 @@
     <entry file="file://$PROJECT_DIR$/js/p5/p5/empty-example/sketch.js" />
     <entry file="file://$PROJECT_DIR$/js/p5/p5/empty-example/index.html" />
     <entry file="file://$PROJECT_DIR$/js/wav.js" />
-    <entry file="file://$PROJECT_DIR$/js/op_secuence.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="149" column="1" lean-forward="true" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tem.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
@@ -304,13 +310,7 @@
     <entry file="file://$PROJECT_DIR$/js/sound.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4242">
-          <caret line="202" column="6" selection-start-line="202" selection-start-column="6" selection-end-line="202" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rw.js" />
     <entry file="file://$PROJECT_DIR$/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -318,34 +318,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nodeServer/index.js" />
     <entry file="file://$PROJECT_DIR$/js/secuencia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1533">
-          <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+        <state relative-caret-position="789">
+          <caret line="213" column="38" selection-start-line="213" selection-start-column="38" selection-end-line="213" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/rw.js">
+    <entry file="file://$PROJECT_DIR$/nodeServer/node_modules/raw-body/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="113" column="50" lean-forward="true" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="1903">
+          <caret line="185" column="8" lean-forward="true" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodeServer/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodeServer/secuencia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="203" column="25" selection-start-line="203" selection-start-column="25" selection-end-line="203" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="135" column="8" lean-forward="true" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
+        <state relative-caret-position="399">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-516">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/op_secuence.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1596">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
