@@ -7,6 +7,7 @@ const WaveFile = require('wavefile');
 const play = require('audio-play');
 const load = require('audio-loader');
 let wav = require('node-wav');
+let Secuencia = require('./secuencia.js');
 
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb'}));
@@ -21,10 +22,22 @@ app.get(base_url + 'wav', function(req, res) {
 });
 
 app.post(base_url + 'genwav', function (req, res) {
-    console.log(req.body);
     if ('name' in req.body) {
         let s = createWav(req.body);
         res.send({res: s});
+    } else {
+        res.send({res: 'Fallido'});
+    }
+});
+
+app.post(base_url + 'interpolate', function (req, res) {
+    if ('input' in req.body) {
+        console.log("Analizando");
+        let sec = new Secuencia(req.body.input, req.body.name);
+        sec.analize_data();
+        console.log(sec.verify());
+        sec.interpolate(req.body.inter);
+        res.send({res: sec.input});
     } else {
         res.send({res: 'Fallido'});
     }

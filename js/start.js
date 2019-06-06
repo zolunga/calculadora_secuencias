@@ -1,5 +1,6 @@
 let dict_secquences = {};
 let count = 0;
+const url = 'http://localhost:4000/sound/';
 initCalc();
 function initCalc() {
     $('.ui.dropdown').dropdown();
@@ -194,9 +195,22 @@ function opInterpolacion(name) {
     let inInter = parseInt($('#inter' + name).val());
     if (inInter === undefined || isNaN(inInter))
         return;
-    dict_secquences[name].interpolate(inInter);
-    let seq_text = paintSequence(dict_secquences[name]);
-    $('#val' + name).replaceWith(seq_text);
+    let sequence = dict_secquences[name];
+    console.log(sequence);
+    console.log(sequence.sequence.length);
+    if (sequence.sequence.length > 200) {
+        $.post(url + 'interpolate', {input: sequence.input, inter: inInter, name: name}, (data) => {
+            console.log(data);
+            dict_secquences[name].input = data.res;
+            dict_secquences[name].analize_data();
+            let seq_text = paintSequence(dict_secquences[name]);
+            $('#val' + name).replaceWith(seq_text);
+        });
+    } else {
+        dict_secquences[name].interpolate(inInter);
+        let seq_text = paintSequence(dict_secquences[name]);
+        $('#val' + name).replaceWith(seq_text);
+    }
 }
 
 function opMulConst(name) {
@@ -255,7 +269,7 @@ function genwav(name) {
         name: seq.name
     };
     console.log(dataS);
-    $.post('http://localhost:4000/sound/genwav', dataS, (data)=>{
+    $.post(url + 'genwav', dataS, (data)=>{
         console.log(data);
     })
 }
