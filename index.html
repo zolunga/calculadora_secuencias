@@ -113,8 +113,6 @@
     function draw() {
         background(255);
         let rms = amp.getLevel();
-        if (recording)
-            amp_hist.push(rms);
         fill(0, 102, 204);
         stroke(100);
         ellipse(width / 2, height / 2, 30 + rms * 200, 30 + rms * 200);
@@ -132,7 +130,6 @@
 
     function record() {
         soundFile = new p5.SoundFile();
-        amp_hist = [];
         recording = true;
         $('#record').removeClass('orange');
         $('#record').addClass('red');

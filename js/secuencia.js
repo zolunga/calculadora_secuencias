@@ -44,7 +44,7 @@ class Secuencia {
             array_tem.pop();
             this.input = array_tem.join(',');
         }
-        this.write()
+        //this.write()
     }
 
     reflex() {
@@ -224,15 +224,11 @@ class Secuencia {
 
     unite(arrA, arrB) {
         let arrRet = [];
-        if (arrA !== undefined && arrA.length > 0) {
-            for (let i = 0; i < arrA.length; i++) {
-                arrRet.push(arrA[i]);
-            }
+        for (let i = 0; i < arrA.length; i++) {
+            arrRet.push(arrA[i]);
         }
-        if (arrB !== undefined && arrB.length > 0) {
-            for (let i = 0; i < arrB.length; i++) {
-                arrRet.push(arrB[i]);
-            }
+        for (let i = 0; i < arrB.length; i++) {
+            arrRet.push(arrB[i]);
         }
         return arrRet;
     }

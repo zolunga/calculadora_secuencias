@@ -24,8 +24,6 @@ function addSequence(event) {
 
 function addSequenceSound(event) {
     event.preventDefault();
-    if (amp_hist === undefined || amp_hist.length === 0)
-        return;
     let name = 'sequence' + count;
 
     setTimeout(() => {
@@ -63,7 +61,6 @@ function createSpace(sequence) {
     cont.addClass('three wide centered column');
     cont.append('<h4>' + sequence.name + '</h4>');
     div.append(seq_text);
-    //div.append('<p id="val' + sequence.name + '">' + sequence.input + '</p>');
     cont.append(div);
     cont.append(buttonReflex);
     cont.append(buttonMultC);
@@ -71,8 +68,7 @@ function createSpace(sequence) {
     cont.append(buttonDiez);
     cont.append(buttonInter);
     cont.append(buttonChart);
-    if (sequence.audio)
-        cont.append(createButtonWav(sequence));
+    cont.append(createButtonWav(sequence));
     cont.addClass('spaceSec');
     $('#workspace').append(cont);
     $('#secuenciasOP1').append('<option>' + sequence.name + '</option>');
@@ -107,7 +103,7 @@ function createButtonWav(sequence) {
     let space = $('<div/>');
     let buttonReflex = $('<button/>');
     buttonReflex.text('Audio');
-    buttonReflex.attr('onclick', 'genwav(\'' + sequence + '\')');
+    buttonReflex.attr('onclick', 'genwav(\'' + sequence.name + '\')');
     buttonReflex.addClass('buttonOP');
     buttonReflex.addClass('mini ui green button');
     space.addClass('spaceD');
@@ -249,15 +245,16 @@ function showChart(name) {
             linewidth: 6
         },
     };
-    console.log(layout)
     Plotly.newPlot('chart', [trace1], layout);
 }
 
-function genwav(sequence) {
+function genwav(name) {
+    let seq = dict_secquences[name];
     let dataS = {
-        seq: JSON.stringify(sequence.sequence),
-        name: sequence.name
+        seq: JSON.stringify(seq.sequence),
+        name: seq.name
     };
+    console.log(dataS);
     $.post('http://localhost:4000/sound/genwav', dataS, (data)=>{
         console.log(data);
     })
