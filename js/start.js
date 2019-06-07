@@ -231,7 +231,8 @@ function showChart(name) {
     let trace1 = {
         x: arX,
         y: arY,
-        mode: 'lines+markers',
+        //mode: 'lines+markers',
+        mode: 'lines',
         marker: {
             color: 'rgb(128, 0, 128)',
             size: 8

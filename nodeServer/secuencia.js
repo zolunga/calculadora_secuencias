@@ -199,14 +199,10 @@ class Secuencia {
         let num_center = this.sequence[this.center];
         let new_sequence = [];
         this.negative.push(0);
-        for (let i = 0; i < this.negative.length; i++) {
-            if (this.negative[i + 1] === undefined)
-                continue;
-            let tem = this.getSubparts(this.negative[i], this.negative[i + 1], n);
-            new_sequence = this.unite(new_sequence, tem);
-            if (i%1000){
+        for (let i = 0; i < this.negative.length - 1; i++) {
+            new_sequence = new_sequence.concat(this.getSubparts(this.negative[i], this.negative[i + 1], n));
+            if (i%1000)
                 console.log(this.negative.length + "-neg-" + i)
-            }
         }
         new_sequence.reverse();
         let neg_to_cen = this.getSubparts(num_center, this.negative[0], n);
@@ -218,22 +214,8 @@ class Secuencia {
         new_sequence = this.unite(new_sequence, cen_to_pos);
         for (let i = 0; i < this.positive.length - 1; i++) {
             new_sequence = new_sequence.concat(this.getSubparts(this.positive[i], this.positive[i + 1], n));
-            //let tem = [];
-            /*
-            if (this.positive[i + 1] !== undefined) {
-                //tem = this.getSubparts(this.positive[i], this.positive[i + 1], n);
-                new_sequence = new_sequence.concat(this.getSubparts(this.positive[i], this.positive[i + 1], n));
-            } else {
-                //tem = this.getSubparts(this.positive[i], 0, n);
-                new_sequence = new_sequence.concat(this.getSubparts(this.positive[i], 0, n));
-            }
-
-            //new_sequence = this.unite(new_sequence, tem);
-
-             */
-            if (i%1000 === 0){
+            if (i%1000 === 0)
                 console.log(this.positive.length + "-pos-" + i)
-            }
         }
         new_sequence = new_sequence.concat(this.getSubparts(this.positive[this.positive.length - 1], 0, n));
         this.input = new_sequence.join(',');
