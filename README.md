@@ -1,1 +1,20 @@
+Intrucciones.
+
+La pagina esta en la raiz de la carpeta en index.html. Al abrila presionar mayus + f5 y esta lista
+
+**En el caso de querer agregar audios es necesario ejecutar el servidor de node JS y permitir el microfono en la pagina
+
+Instalar node JS, se puede hacer desde su página principal.
+
+Despues de instalarl node JS, se procede a instalar la siguiente paqueteria a traves de una terminal
+
+- npn install express
+- npn install cors
+- npn install wavefile
+- npn install node-wav
+
+Para correr el servidor de NodeJS se navega a la carpeta nodeServer/ se escribe en la terminal: 
+
+- node app.js
+
 # calculadora_secuencias
