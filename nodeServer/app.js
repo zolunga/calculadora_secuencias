@@ -4,8 +4,6 @@ const app = express();
 app.use(cors());
 let base_url = '/sound/';
 const WaveFile = require('wavefile');
-const play = require('audio-play');
-const load = require('audio-loader');
 let wav = require('node-wav');
 let Secuencia = require('./secuencia.js');
 
